@@ -16,39 +16,37 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Health check endpoint
+// Health check
 app.get('/', (req, res) => {
   res.json({ message: 'Task Management API is running' });
 });
 
-// API Routes
+// Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
 
-// Error handling middleware
+// Error handler
 app.use(errorHandler);
 
-// 404 handler
+// 404
 app.use((req, res) => {
   res.status(404).json({ error: 'Route not found' });
 });
 
-// Database connection and server start
-const startServer = async () => {
+// ✅ START SERVER FIRST (IMPORTANT)
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+// ✅ THEN connect DB (separately)
+(async () => {
   try {
     await sequelize.authenticate();
-    console.log('Database connection established successfully.');
-    
-    await sequelize.sync({ alter: true });
-    console.log('Database models synchronized.');
+    console.log('Database connected');
 
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-    });
+    await sequelize.sync();
+    console.log('Models synced');
   } catch (error) {
-    console.error('Unable to connect to the database:', error);
+    console.error('Database error:', error.message);
   }
-};
-
-startServer();
-
+})();
