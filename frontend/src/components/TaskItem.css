@@ -1,0 +1,258 @@
+.task-item-card {
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  transform: scale(1);
+  border-left: 4px solid;
+}
+
+.task-item-card:hover {
+  transform: scale(1.02);
+}
+
+.task-item-completed {
+  background: linear-gradient(to right, #f0fdf4, #ecfdf5);
+  border-left-color: #22c55e;
+}
+
+.task-item-pending {
+  background: #ffffff;
+  border-left-color: #3b82f6;
+}
+
+.task-item-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.task-item-checkbox-wrap {
+  flex-shrink: 0;
+  padding-top: 0.25rem;
+}
+
+.task-item-checkbox {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.task-item-checkbox:hover {
+  transform: scale(1.1);
+}
+
+.task-item-checkbox-done {
+  background: #22c55e;
+  border-color: #22c55e;
+}
+
+.task-item-checkbox-default {
+  border-color: #d1d5db;
+}
+
+.task-item-checkbox-default:hover {
+  border-color: #3b82f6;
+}
+
+.task-item-check-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #ffffff;
+}
+
+.task-item-body {
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.task-item-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.task-item-title-done {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.task-item-description {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+.task-item-description-done {
+  color: #9ca3af;
+}
+
+.task-item-meta {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.task-item-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.task-item-status-done {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.task-item-status-pending {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.task-item-date {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.task-item-actions {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task-action-btn {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.task-action-btn:hover {
+  transform: scale(1.1);
+}
+
+.task-action-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.task-action-edit {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+
+.task-action-edit:hover {
+  background: #c7d2fe;
+}
+
+.task-action-pending {
+  background: #fef3c7;
+  color: #a16207;
+}
+
+.task-action-pending:hover {
+  background: #fde68a;
+}
+
+.task-action-complete {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.task-action-complete:hover {
+  background: #bbf7d0;
+}
+
+.task-action-delete {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.task-action-delete:hover {
+  background: #fecaca;
+}
+
+.task-delete-wrap {
+  position: relative;
+}
+
+.task-confirm-modal {
+  position: absolute;
+  right: 0;
+  margin-top: 0.5rem;
+  width: 12rem;
+  background: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.12);
+  border: 1px solid #fecaca;
+  padding: 1rem;
+  z-index: 50;
+}
+
+.task-confirm-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.task-confirm-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.task-confirm-delete,
+.task-confirm-cancel {
+  flex: 1;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.task-confirm-delete {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.task-confirm-delete:hover {
+  background: #dc2626;
+}
+
+.task-confirm-cancel {
+  background: #e5e7eb;
+  color: #1f2937;
+}
+
+.task-confirm-cancel:hover {
+  background: #d1d5db;
+}
+
+.spin {
+  animation: task-spin 1s linear infinite;
+}
+
+@keyframes task-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

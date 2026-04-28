@@ -1,0 +1,140 @@
+.task-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: linear-gradient(to right, #2563eb, #1d4ed8, #3730a3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+.task-navbar-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.task-navbar-left,
+.task-navbar-right,
+.task-navbar-user {
+  display: flex;
+  align-items: center;
+}
+
+.task-navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
+
+.task-navbar-left {
+  gap: 0.75rem;
+}
+
+.task-navbar-logo {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(8px);
+}
+
+.task-navbar-logo-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #ffffff;
+}
+
+.task-navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.task-navbar-brand:hover {
+  color: #dbeafe;
+}
+
+.task-navbar-right {
+  gap: 1rem;
+}
+
+.task-navbar-user {
+  gap: 0.75rem;
+}
+
+.task-navbar-user-text {
+  text-align: right;
+}
+
+.task-navbar-welcome {
+  font-size: 0.875rem;
+  color: #dbeafe;
+}
+
+.task-navbar-email {
+  color: #ffffff;
+  font-weight: 500;
+  max-width: 14rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.task-navbar-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #ef4444;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.task-navbar-logout:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+.task-navbar-logout-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.task-navbar-login {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: 0.2s ease;
+}
+
+.task-navbar-login:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #eff6ff;
+}
+
+@media (max-width: 640px) {
+  .task-navbar-container {
+    height: auto;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .task-navbar-user {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .task-navbar-email {
+    max-width: 9rem;
+  }
+}
